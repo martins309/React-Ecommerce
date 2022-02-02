@@ -1,4 +1,8 @@
 import React from 'react';
+import MenuItem from '../Menu-item/menu-items.component';
+import './directory.styles.scss'
+
+
 
 //constructor is always needed
 //call super to call all the things that we need for the react component
@@ -44,4 +48,20 @@ class Directory extends React.Component {
 
         }
     }
+
+    render() {
+        return(
+            <div className="menu-item">
+                {
+                    this.state.sections.map(({title, id, imageUrl}) => (
+                        <MenuItem key={id} title={title}/>
+                    ))
+                }
+
+            </div>
+
+        )
+    }
 }
+
+export default Directory
